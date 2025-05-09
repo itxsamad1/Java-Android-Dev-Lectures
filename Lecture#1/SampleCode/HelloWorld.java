@@ -1,16 +1,17 @@
 /**
- * A simple Hello World program to demonstrate basic Java syntax
+ * Topic 1: Hello World Program
+ * This is the first Java program you'll write.
+ * It demonstrates the basic structure of a Java application.
  */
 public class HelloWorld {
+    
+    // The main method is the entry point of any Java application
     public static void main(String[] args) {
-        // Print a greeting to the console
-        System.out.println("Hello, World! Welcome to Android Development!");
+        // Print a message to the console
+        System.out.println("Hello, World!");
         
-        // Demonstrate variables
-        String courseName = "Mobile Application Development";
-        int lectureNumber = 1;
-        
-        // Print using variables
-        System.out.println("This is " + courseName + ", Lecture #" + lectureNumber);
+        // You can print multiple lines
+        System.out.println("Welcome to Java Programming!");
+        System.out.println("This is my first Java program.");
     }
 } 

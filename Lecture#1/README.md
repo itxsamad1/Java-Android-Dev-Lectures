@@ -1,8 +1,5 @@
 # Lecture #1: Introduction to Java and Android Development
 
-## Overview
-This lecture covers the fundamentals of Java programming and introduces Android application development. It lays the foundation for the entire course by exploring core concepts that will be used throughout our Android development journey.
-
 ## Topics Covered
 
 1. **Java Basics**
@@ -20,21 +17,29 @@ This lecture covers the fundamentals of Java programming and introduces Android 
    - Unary operators (++, --)
    - Ternary operator (? :)
 
-3. **Introduction to Loops and Arrays**
+3. **Control Flow**
+   - Loops (for, while, do-while)
+   - Arrays (single and multi-dimensional)
+   - Functions/Methods
+   
+4. **Object-Oriented Programming Basics**
+   - Classes and Objects
+   - Attributes and Methods
+   - Constructors
+   - Encapsulation
 
 ## Sample Code
-The `SampleCode` directory contains examples demonstrating these concepts:
-- `HelloWorld.java`: Basic Java program structure
-- `Variables.java`: Variable declaration and naming rules
-- `DataTypes.java`: Different data types in Java
-- `Typecasting.java`: Implicit and explicit type conversion
-- `Operators.java`: Examples of different operators
-- `Section6B.java`: Sample code from the lecture
+The `SampleCode` directory contains cleanly organized examples demonstrating these concepts:
 
-## Practice Exercises
-1. Create a Java program that demonstrates all variable naming rules
-2. Write a program to demonstrate different types of operators
-3. Create a simple calculator that performs basic arithmetic operations
+1. `HelloWorld.java` - Basic Java program structure
+2. `VariableRules.java` - Variable declaration and naming rules
+3. `DataTypes.java` - Different data types in Java
+4. `Typecasting.java` - Implicit and explicit type conversion
+5. `Operators.java` - Examples of different operators
+6. `Loops.java` - Different types of loops in Java
+7. `Arrays.java` - Working with single and multi-dimensional arrays
+8. `Functions.java` - Methods and their usage in Java
+9. `OOPConcepts.java` - Basic Object-Oriented Programming concepts
 
 ## Variable Naming Rules
 1. Can use A-Z (uppercase letters)
@@ -45,9 +50,5 @@ The `SampleCode` directory contains examples demonstrating these concepts:
 
 ## Resources
 - `Notes.pdf`: Comprehensive lecture notes
-- `SampleCode/`: Directory containing example code from the lecture
-  - `HelloWorld.java`: Basic Java program demonstrating syntax and structure
-
-## Additional Resources
 - [Oracle Java Documentation](https://docs.oracle.com/javase/tutorial/)
 - [Android Developer Documentation](https://developer.android.com/docs) 

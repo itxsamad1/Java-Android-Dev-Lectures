@@ -1,58 +1,68 @@
 /**
- * This program demonstrates implicit and explicit typecasting in Java
+ * Topic 4: Typecasting in Java
+ * This program demonstrates the two types of typecasting in Java:
+ * 1. Implicit Typecasting (Widening)
+ * 2. Explicit Typecasting (Narrowing)
  */
 public class Typecasting {
     public static void main(String[] args) {
-        System.out.println("Typecasting in Java");
-        System.out.println("===================\n");
+        System.out.println("Java Typecasting Examples");
+        System.out.println("========================");
         
-        // 1. Implicit Typecasting (Widening)
-        // Smaller type to larger type - done automatically
-        System.out.println("Implicit Typecasting (Widening):");
+        // 1. Implicit Typecasting (Widening Conversion)
+        // When smaller data type is automatically converted to larger data type
+        System.out.println("\n1. Implicit Typecasting (Widening):");
         
-        // byte -> short -> int -> long -> float -> double
-        byte byteValue = 100;
-        short shortValue = byteValue;     // byte to short
-        int intValue = shortValue;        // short to int
-        long longValue = intValue;        // int to long
-        float floatValue = longValue;     // long to float
-        double doubleValue = floatValue;  // float to double
+        // Conversion hierarchy: 
+        // byte → short → int → long → float → double
         
-        System.out.println("byte value: " + byteValue);
-        System.out.println("After byte to short: " + shortValue);
-        System.out.println("After short to int: " + intValue);
-        System.out.println("After int to long: " + longValue);
-        System.out.println("After long to float: " + floatValue);
-        System.out.println("After float to double: " + doubleValue);
+        byte myByte = 100;
+        short myShort = myByte;       // byte to short
+        int myInt = myShort;          // short to int
+        long myLong = myInt;          // int to long
+        float myFloat = myLong;       // long to float
+        double myDouble = myFloat;    // float to double
         
-        // char to int
-        char charValue = 'A';
-        int charToInt = charValue;  // Stores the ASCII value of 'A' (65)
-        System.out.println("\nchar '" + charValue + "' to int: " + charToInt);
+        System.out.println("byte value: " + myByte);
+        System.out.println("Automatic conversion to short: " + myShort);
+        System.out.println("Automatic conversion to int: " + myInt);
+        System.out.println("Automatic conversion to long: " + myLong);
+        System.out.println("Automatic conversion to float: " + myFloat);
+        System.out.println("Automatic conversion to double: " + myDouble);
         
-        // 2. Explicit Typecasting (Narrowing)
-        // Larger type to smaller type - requires explicit casting
-        System.out.println("\nExplicit Typecasting (Narrowing):");
+        // Another example with char to int
+        char myChar = 'A';
+        int charToInt = myChar;  // char is automatically converted to int (stores ASCII value)
+        System.out.println("\nchar '" + myChar + "' to int: " + charToInt);
         
-        double doubleNum = 123.456;
-        float floatNum = (float) doubleNum;     // double to float
-        long longNum = (long) floatNum;         // float to long
-        int intNum = (int) longNum;             // long to int
-        short shortNum = (short) intNum;        // int to short
-        byte byteNum = (byte) shortNum;         // short to byte
         
-        System.out.println("Original double value: " + doubleNum);
-        System.out.println("After double to float: " + floatNum);
-        System.out.println("After float to long: " + longNum);
-        System.out.println("After long to int: " + intNum);
-        System.out.println("After int to short: " + shortNum);
-        System.out.println("After short to byte: " + byteNum);
+        // 2. Explicit Typecasting (Narrowing Conversion)
+        // When larger data type is manually converted to smaller data type
+        System.out.println("\n2. Explicit Typecasting (Narrowing):");
         
-        // Potential data loss example
-        int largeInt = 129;  // Out of byte range (-128 to 127)
-        byte smallByte = (byte) largeInt;
-        System.out.println("\nPotential data loss:");
-        System.out.println("Original int value: " + largeInt);
-        System.out.println("After conversion to byte: " + smallByte);  // Result will be -127
+        double largeDouble = 123.456;
+        
+        // We need to explicitly cast to convert to smaller types
+        float largeFloat = (float) largeDouble;    // double to float
+        long largeLong = (long) largeFloat;        // float to long
+        int largeInt = (int) largeLong;            // long to int
+        short largeShort = (short) largeInt;       // int to short
+        byte largeByte = (byte) largeShort;        // short to byte
+        
+        System.out.println("double value: " + largeDouble);
+        System.out.println("Explicit cast to float: " + largeFloat);
+        System.out.println("Explicit cast to long: " + largeLong);
+        System.out.println("Explicit cast to int: " + largeInt);
+        System.out.println("Explicit cast to short: " + largeShort);
+        System.out.println("Explicit cast to byte: " + largeByte);
+        
+        // Data loss example
+        int number = 130;  // Outside byte range (-128 to 127)
+        byte smallByte = (byte) number;
+        
+        System.out.println("\nData Loss Example:");
+        System.out.println("int value: " + number);
+        System.out.println("After explicit cast to byte: " + smallByte);  // Will be -126
+        System.out.println("(Data loss occurred because byte can only store -128 to 127)");
     }
 } 
