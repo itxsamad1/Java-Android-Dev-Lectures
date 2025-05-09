@@ -1,6 +1,8 @@
 # Java and Android Development Lectures
 
-This repository contains all lecture materials, sample code, and resources for the Mobile Application Development course focusing on Java and Android development.
+Hi, I'm Abdul Samad, a Software Developer. I created this repository to document my learning journey in the Mobile Application Development course at SMIU during the Spring 2025 term (6th semester). 
+
+Sir Abid is our course instructor, and his teaching method is very classy and effective. This repository serves as my personal learning resource and practice area, while also contributing to the open source community.
 
 ## Repository Structure
 
