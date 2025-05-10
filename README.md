@@ -54,9 +54,39 @@ Lecture#X/
 2. Install required software
    - Install [JDK 17 or later](https://www.oracle.com/java/technologies/downloads/)
    - Install [Android Studio](https://developer.android.com/studio)
-   - Set up JAVA_HOME environment variable pointing to your JDK installation
 
-3. Navigate to each lecture folder as we progress through the course
+3. Set up environment variables
+   - **JAVA_HOME**: Points to your JDK installation directory
+     ```
+     # Windows example
+     JAVA_HOME=C:\Program Files\Java\jdk-17
+     
+     # macOS/Linux example
+     export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+     ```
+   
+   - **ANDROID_HOME**: Points to your Android SDK location
+     ```
+     # Windows example
+     ANDROID_HOME=C:\Users\YourUsername\AppData\Local\Android\Sdk
+     
+     # macOS example
+     export ANDROID_HOME=~/Library/Android/sdk
+     
+     # Linux example
+     export ANDROID_HOME=~/Android/Sdk
+     ```
+   
+   - Add platform tools to your PATH
+     ```
+     # Windows - add to PATH environment variable
+     %ANDROID_HOME%\platform-tools
+     
+     # macOS/Linux - add to .bash_profile or .zshrc
+     export PATH=$PATH:$ANDROID_HOME/platform-tools
+     ```
+
+4. Navigate to each lecture folder as we progress through the course
 
 ## Running Android Apps
 
