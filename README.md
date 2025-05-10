@@ -46,7 +46,3 @@ Lecture#X/
 ## Contributing
 
 This repository is primarily for educational purposes. If you find errors or have suggestions for improvements, please open an issue.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
