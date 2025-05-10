@@ -1,0 +1,2 @@
+This is a placeholder for an Android development showcase image.
+Please add an actual Android UI/development image to this directory and name it "android_showcase1.jpg" or "android_showcase1.png". 

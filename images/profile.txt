@@ -1,0 +1,2 @@
+This is a placeholder for Abdul Samad's profile picture.
+Please add your actual profile picture to this directory and name it "profile.jpg" or "profile.png". 

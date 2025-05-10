@@ -1,8 +1,21 @@
 # Java and Android Development Lectures
 
+<div align="center">
+  <img src="images/profile.png" alt="Abdul Samad" width="150" style="border-radius: 50%;" />
+  <h3>Abdul Samad</h3>
+  <p>Software Developer</p>
+</div>
+
 Hi, I'm Abdul Samad, a Software Developer. I created this repository to document my learning journey in the Mobile Application Development course at SMIU during the Spring 2025 term (6th semester). 
 
 Sir Abid is our course instructor, and his teaching method is very classy and effective. This repository serves as my personal learning resource and practice area, while also contributing to the open source community.
+
+## Android Development Showcase
+
+<div align="center">
+  <img src="images/android_showcase1.png" alt="Android UI Example" width="300" />
+  <img src="images/android_showcase2.png" alt="Android Development" width="300" />
+</div>
 
 ## Repository Structure
 
