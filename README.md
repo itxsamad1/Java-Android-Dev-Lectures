@@ -1,7 +1,7 @@
 # Java and Android Development Lectures
 
 <div align="center">
-  <img src="images/profile.png" alt="Abdul Samad" width="150" style="border-radius: 50%;" />
+  <img src="images/sam profile pic.jpg" alt="Abdul Samad" width="150" style="border-radius: 50%;" />
   <h3>Abdul Samad</h3>
   <p>Software Developer</p>
 </div>
@@ -13,8 +13,8 @@ Sir Abid is our course instructor, and his teaching method is very classy and ef
 ## Android Development Showcase
 
 <div align="center">
-  <img src="images/android_showcase1.png" alt="Android UI Example" width="300" />
-  <img src="images/android_showcase2.png" alt="Android Development" width="300" />
+  <img src="images/android studio icon.png" alt="Android Studio" width="300" />
+  <img src="images/android-developers.png" alt="Android Developers" width="300" />
 </div>
 
 ## Repository Structure
