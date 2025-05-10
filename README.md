@@ -1,7 +1,7 @@
 # Java and Android Development Lectures
 
 <div align="center">
-  <img src="images/sam-profile-pic.jpg" alt="Abdul Samad" width="150" style="border-radius: 50%;" />
+  <img src="images/sam-profile-pic.jpg" alt="Abdul Samad" width="150" height="150" style="border-radius: 50%; object-fit: cover; border: 3px solid #3DDC84;" />
   <h3>Abdul Samad</h3>
   <p>Software Developer</p>
 </div>
