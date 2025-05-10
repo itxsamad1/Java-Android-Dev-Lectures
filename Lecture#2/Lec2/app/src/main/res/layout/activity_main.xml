@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/row1">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A"
+            android:textSize="38sp"
+            android:layout_weight="1"
+            android:padding="10px"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="B"
+            android:textSize="38sp"
+            android:layout_weight="1"
+            android:padding="10px"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="C"
+            android:textSize="38sp"
+            android:layout_weight="1"
+            android:padding="10px"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="D"
+            android:textSize="38sp"
+            android:layout_weight="1"
+            android:padding="10px"
+            />
+        
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/row2"
+        android:orientation="horizontal"
+        android:layout_below="@+id/row1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="E"
+            android:textSize="38sp"
+            android:layout_weight="1"
+            android:padding="10px"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="F"
+            android:textSize="38sp"
+            android:layout_weight="1"
+            android:padding="10px"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="G"
+            android:textSize="38sp"
+            android:layout_weight="1"
+            android:padding="10px"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="H"
+            android:textSize="38sp"
+            android:layout_weight="1"
+            android:padding="10px"
+            />
+        
+    </LinearLayout>
+    
+    
+</RelativeLayout>
+
+
+<!--<RelativeLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:id="@+id/main"-->
+<!--    android:orientation="vertical"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".MainActivity">-->
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="SMI University"-->
+<!--        android:id="@+id/txt1"-->
+<!--        android:layout_below="@id/txt4"-->
+<!--        android:textColor="#044D6A"-->
+<!--        android:fontFamily="monospace"-->
+<!--        android:textSize="20sp"-->
+<!--        android:layout_margin="8px"-->
+<!--        />-->
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="AOA, "-->
+<!--        android:id="@+id/txt4"-->
+<!--        android:textColor="#044D6A"-->
+<!--        android:fontFamily="monospace"-->
+<!--        android:textSize="20sp"-->
+<!--        android:layout_margin="8px"-->
+<!--        />-->
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="I am student of SMI University"-->
+<!--        android:id="@+id/txt2"-->
+<!--        android:layout_below="@id/txt3"-->
+<!--        android:textColor="#044D6A"-->
+<!--        android:fontFamily="monospace"-->
+<!--        android:textSize="20sp"-->
+<!--        android:layout_margin="8px"-->
+<!--        />-->
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="I am Teacher of SMI University"-->
+<!--        android:id="@+id/txt3"-->
+<!--        android:layout_below="@id/txt1"-->
+<!--        android:textColor="#044D6A"-->
+<!--        android:fontFamily="monospace"-->
+<!--        android:textSize="20sp"-->
+<!--        android:layout_margin="8px"-->
+<!--        />-->
+
+
+<!--</RelativeLayout>-->
+
+
+<!--<LinearLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:id="@+id/main"-->
+<!--    android:orientation="vertical"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".MainActivity">-->
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="SMI University"-->
+<!--        android:textColor="#044D6A"-->
+<!--        android:fontFamily="monospace"-->
+<!--        android:textSize="20sp"-->
+<!--        android:layout_margin="8px"-->
+<!--        />-->
+<!--    -->
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="I am student of SMI University"-->
+<!--        android:textColor="#044D6A"-->
+<!--        android:fontFamily="monospace"-->
+<!--        android:textSize="20sp"-->
+<!--        android:layout_margin="8px"-->
+<!--        />-->
+<!--    -->
+
+<!--</LinearLayout>-->
