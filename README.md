@@ -47,8 +47,40 @@ Lecture#X/
 ## Getting Started
 
 1. Clone this repository
-2. Install [Android Studio](https://developer.android.com/studio)
+   ```
+   git clone https://github.com/itxsamad1/Java-Android-Dev-Lectures.git
+   ```
+
+2. Install required software
+   - Install [JDK 17 or later](https://www.oracle.com/java/technologies/downloads/)
+   - Install [Android Studio](https://developer.android.com/studio)
+   - Set up JAVA_HOME environment variable pointing to your JDK installation
+
 3. Navigate to each lecture folder as we progress through the course
+
+## Running Android Apps
+
+### Using the Emulator
+1. Open the project in Android Studio
+2. Click on "AVD Manager" in the toolbar
+3. Create a new virtual device if none exists
+4. Select your virtual device and click "Start"
+5. Run the app by clicking the green "Run" button
+
+### Using a Physical Android Device
+1. Enable "Developer options" on your Android device
+   - Go to Settings > About phone
+   - Tap "Build number" 7 times
+   - Return to Settings > System > Developer options
+   - Enable "USB debugging"
+
+2. Connect your device via USB
+   - Allow USB debugging when prompted on your device
+   - Make sure your computer recognizes the device
+
+3. Run the app from Android Studio
+   - Select your device from the dropdown menu
+   - Click the green "Run" button
 
 ## Prerequisites
 
