@@ -37,15 +37,15 @@ Lecture#X/
 
 ## Course Outline
 
-- **Lecture #1**: Introduction to Java and Android Development
-- **Lecture #2**: Object-Oriented Programming in Java
-- **Lecture #3**: Android Application Fundamentals
-- **Lecture #4**: UI Design and Layouts
-- **Lecture #5**: Activities and Intents
-- **Lecture #6**: Fragments and Navigation
-- **Lecture #7**: RecyclerView and Adapters
-- **Lecture #8**: Data Storage Options
-- **Lecture #9**: Networking and APIs
+- **Lecture #1** (March 1, 2025): Introduction to Java and Android Development
+- **Lecture #2** (March 8, 2025): Object-Oriented Programming in Java
+- **Lecture #3** (March 15, 2025): Android Application Fundamentals
+- **Lecture #4** (March 22, 2025): UI Design and Layouts
+- **Lecture #5** (March 29, 2025): Activities and Intents
+- **Lecture #6** (April 5, 2025): Fragments and Navigation
+- **Lecture #7** (April 26, 2025): RecyclerView and Adapters
+- **Lecture #8** (May 3, 2025): Data Storage Options
+- **Lecture #9** (May 10, 2025): Networking and APIs
 - **Lecture #10**: Background Processing
 - **Lecture #11**: Location and Maps
 - **Lecture #12**: Publishing and Monetization
