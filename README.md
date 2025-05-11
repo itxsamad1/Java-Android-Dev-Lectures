@@ -1,4 +1,4 @@
-# Java and Android Development Lectures
+# Java Android Development Lectures
 
 <div align="center">
   <img src="images/sam-profile-pic.jpg" alt="Abdul Samad" width="150" />
@@ -28,6 +28,12 @@ Lecture#X/
 ├── SampleCode/ (example code demonstrated in class)
 └── Assignments/ (homework and practical tasks)
 ```
+
+## Prerequisites
+
+- Basic programming knowledge
+- Java Development Kit (JDK) installed
+- Android Studio installed
 
 ## Course Outline
 
@@ -111,12 +117,6 @@ Lecture#X/
 3. Run the app from Android Studio
    - Select your device from the dropdown menu
    - Click the green "Run" button
-
-## Prerequisites
-
-- Basic programming knowledge
-- Java Development Kit (JDK) installed
-- Android Studio installed
 
 ## Contributing
 
