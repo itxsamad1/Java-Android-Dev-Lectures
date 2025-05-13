@@ -42,8 +42,8 @@ public class OOPConcepts {
         System.out.println("\n1. CREATING OBJECTS:");
         
         // Using constructor with parameters
-        Person person1 = new Person("John", 25);
-        Person person2 = new Person("Alice", 30);
+        Person person1 = new Person("Abdul Samad", 25);
+        Person person2 = new Person("Adeel", 30);
         
         // Display person details
         System.out.println("Person 1: " + person1.getName() + ", " + person1.getAge() + " years old");
@@ -74,7 +74,7 @@ public class OOPConcepts {
         // Creating object using default constructor
         Person person3 = new Person();
         System.out.println("\nPerson 3 (default constructor): " + person3.getName() + ", " + person3.getAge() + " years old");
-        person3.setName("Bob");
+        person3.setName("Hafiz Muddasir");
         person3.setAge(22);
         System.out.println("After setting values - Person 3: " + person3.getName() + ", " + person3.getAge() + " years old");
         
@@ -85,14 +85,14 @@ public class OOPConcepts {
         
         System.out.println("\n4. INHERITANCE EXAMPLE:");
         // Student class inherits from Person class (using 'extends')
-        Student student1 = new Student("Emma", 20, "Computer Science");
+        Student student1 = new Student("Abdul Samad", 20, "Computer Science");
         // Can use methods and properties from Person class
         System.out.println("Student: " + student1.getName() + ", " + student1.getAge() + " years old, Major: " + student1.getMajor());
         student1.sayHello(); // Method inherited from Person but overridden in Student
         student1.study();    // Method specific to Student
         
         // Another example of inheritance
-        Teacher teacher1 = new Teacher("Prof. Smith", 45, "Computer Science");
+        Teacher teacher1 = new Teacher("Prof. Abid", 45, "Computer Science");
         System.out.println("\nTeacher: " + teacher1.getName() + ", " + teacher1.getAge() + " years old, Department: " + teacher1.getDepartment());
         teacher1.sayHello();  // Method inherited from Person but overridden in Teacher
         teacher1.teach();     // Method specific to Teacher
