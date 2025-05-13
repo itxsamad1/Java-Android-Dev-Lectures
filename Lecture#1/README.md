@@ -26,7 +26,11 @@
    - Classes and Objects
    - Attributes and Methods
    - Constructors
-   - Encapsulation
+   - Four Pillars of OOP:
+     - Encapsulation - Bundling data and methods that operate on the data
+     - Inheritance - Creating new classes from existing classes
+     - Polymorphism - Using a single interface for different data types
+     - Abstraction - Hiding implementation details and exposing only functionality
 
 ## Sample Code
 The `SampleCode` directory contains cleanly organized examples demonstrating these concepts:
@@ -39,7 +43,7 @@ The `SampleCode` directory contains cleanly organized examples demonstrating the
 6. `Loops.java` - Different types of loops in Java
 7. `Arrays.java` - Working with single and multi-dimensional arrays
 8. `Functions.java` - Methods and their usage in Java
-9. `OOPConcepts.java` - Basic Object-Oriented Programming concepts
+9. `OOPConcepts.java` - Object-Oriented Programming concepts with all four pillars
 
 ## Variable Naming Rules
 1. Can use A-Z (uppercase letters)

@@ -1,10 +1,15 @@
 /**
  * Topic 9: Object-Oriented Programming Concepts in Java
- * This program demonstrates basic OOP concepts:
- * 1. Classes and Objects
- * 2. Attributes and Methods
- * 3. Constructors
- * 4. Encapsulation (Getter and Setter methods)
+ * This program demonstrates the four pillars of OOP:
+ * 1. Encapsulation - Bundling data and methods that operate on the data within a single unit
+ * 2. Inheritance - Creating new classes from existing classes
+ * 3. Polymorphism - Using a single interface for different data types
+ * 4. Abstraction - Hiding implementation details and exposing only functionality
+ * 
+ * Along with basic OOP concepts:
+ * - Classes and Objects
+ * - Attributes and Methods
+ * - Constructors
  */
 public class OOPConcepts {
     public static void main(String[] args) {
@@ -27,8 +32,8 @@ public class OOPConcepts {
         person1.sayHello();
         person2.sayHello();
         
-        // Changing object state using setter methods
-        System.out.println("\n3. Modifying Object State:");
+        // Changing object state using setter methods (Encapsulation)
+        System.out.println("\n3. Encapsulation Example:");
         System.out.println("Before change - Person 1 age: " + person1.getAge());
         person1.setAge(26);
         System.out.println("After change - Person 1 age: " + person1.getAge());
@@ -40,19 +45,40 @@ public class OOPConcepts {
         person3.setAge(22);
         System.out.println("After setting values - Person 3: " + person3.getName() + ", " + person3.getAge() + " years old");
         
-        // Working with Student class (demonstration of inheritance would be in later lectures)
-        System.out.println("\n4. Creating Different Class Object:");
+        // Inheritance Example
+        System.out.println("\n4. Inheritance Example:");
         Student student1 = new Student("Emma", 20, "Computer Science");
         System.out.println("Student: " + student1.getName() + ", " + student1.getAge() + " years old, Major: " + student1.getMajor());
-        student1.study();
+        student1.sayHello(); // Method inherited from Person
+        student1.study();    // Method specific to Student
+        
+        // Polymorphism Example
+        System.out.println("\n5. Polymorphism Example:");
+        Person[] people = new Person[3];
+        people[0] = person1;              // Person object
+        people[1] = student1;             // Student object (treated as Person)
+        people[2] = new Teacher("Prof. Smith", 45, "Computer Science"); // Teacher object (treated as Person)
+        
+        // Polymorphic behavior
+        for (Person p : people) {
+            p.sayHello(); // Each object responds according to its own implementation
+        }
+        
+        // Abstraction Example
+        System.out.println("\n6. Abstraction Example:");
+        Shape circle = new Circle(5.0);
+        Shape rectangle = new Rectangle(4.0, 6.0);
+        
+        System.out.println("Circle area: " + circle.calculateArea());
+        System.out.println("Rectangle area: " + rectangle.calculateArea());
     }
 }
 
 /*
- * Person class demonstrating basic OOP concepts
+ * Person class demonstrating encapsulation
  */
 class Person {
-    // Attributes (instance variables)
+    // Attributes (instance variables) - private for encapsulation
     private String name;
     private int age;
     
@@ -97,46 +123,105 @@ class Person {
 }
 
 /*
- * Student class 
+ * Student class inheriting from Person - example of inheritance
  */
-class Student {
-    private String name;
-    private int age;
+class Student extends Person {
     private String major;
     
     public Student(String name, int age, String major) {
-        this.name = name;
-        this.age = age;
+        super(name, age); // Call parent constructor
         this.major = major;
     }
     
+    // Override parent method - example of polymorphism
+    @Override
+    public void sayHello() {
+        System.out.println(getName() + " the student says: Hello there!");
+    }
+    
     public void study() {
-        System.out.println(name + " is studying " + major);
+        System.out.println(getName() + " is studying " + major);
     }
     
-    // Getter methods
-    public String getName() {
-        return name;
-    }
-    
-    public int getAge() {
-        return age;
-    }
-    
+    // Getter and setter for the new field
     public String getMajor() {
         return major;
     }
     
-    // Setter methods
-    public void setName(String name) {
-        this.name = name;
-    }
-    
-    public void setAge(int age) {
-        this.age = age;
-    }
-    
     public void setMajor(String major) {
         this.major = major;
+    }
+}
+
+/*
+ * Teacher class inheriting from Person - another example of inheritance
+ */
+class Teacher extends Person {
+    private String department;
+    
+    public Teacher(String name, int age, String department) {
+        super(name, age);
+        this.department = department;
+    }
+    
+    // Override parent method - example of polymorphism
+    @Override
+    public void sayHello() {
+        System.out.println(getName() + " the professor says: Welcome to class!");
+    }
+    
+    public void teach() {
+        System.out.println(getName() + " is teaching in the " + department + " department");
+    }
+    
+    // Getter and setter for the new field
+    public String getDepartment() {
+        return department;
+    }
+    
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+}
+
+/*
+ * Abstract class Shape - example of abstraction
+ */
+abstract class Shape {
+    // Abstract method that must be implemented by subclasses
+    public abstract double calculateArea();
+}
+
+/*
+ * Circle class inheriting from Shape
+ */
+class Circle extends Shape {
+    private double radius;
+    
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+    
+    @Override
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+}
+
+/*
+ * Rectangle class inheriting from Shape
+ */
+class Rectangle extends Shape {
+    private double width;
+    private double height;
+    
+    public Rectangle(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+    
+    @Override
+    public double calculateArea() {
+        return width * height;
     }
 } 
