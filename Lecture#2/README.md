@@ -1,4 +1,4 @@
-# Lecture #2: Android UI Layouts
+# Lecture #2: Android Architecture and UI Layouts
 
 ## Overview
 This lecture covers the fundamentals of Android UI design, focusing on different layout types and how to arrange UI elements on the screen.
