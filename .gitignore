@@ -79,4 +79,10 @@ lint/tmp/
 
 # Windows
 Thumbs.db
-ehthumbs.db 
+ehthumbs.db
+
+# Compiled class files
+*.class
+
+# Output files
+output.txt 

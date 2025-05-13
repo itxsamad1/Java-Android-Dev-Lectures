@@ -13,11 +13,11 @@
  */
 public class OOPConcepts {
     public static void main(String[] args) {
-        System.out.println("Java OOP Concepts Examples");
-        System.out.println("=========================");
+        System.out.println("JAVA OOP CONCEPTS EXAMPLES");
+        System.out.println("==========================");
         
         // Creating objects from the Person class
-        System.out.println("\n1. Creating Objects:");
+        System.out.println("\n1. CREATING OBJECTS:");
         
         // Using constructor with parameters
         Person person1 = new Person("John", 25);
@@ -28,15 +28,20 @@ public class OOPConcepts {
         System.out.println("Person 2: " + person2.getName() + ", " + person2.getAge() + " years old");
         
         // Using methods
-        System.out.println("\n2. Using Methods:");
+        System.out.println("\n2. USING METHODS:");
         person1.sayHello();
         person2.sayHello();
         
         // Changing object state using setter methods (Encapsulation)
-        System.out.println("\n3. Encapsulation Example:");
+        System.out.println("\n3. ENCAPSULATION EXAMPLE:");
         System.out.println("Before change - Person 1 age: " + person1.getAge());
         person1.setAge(26);
         System.out.println("After change - Person 1 age: " + person1.getAge());
+        
+        // Try to set invalid age
+        System.out.println("Trying to set invalid age (-5):");
+        person1.setAge(-5); // This will be rejected due to validation
+        System.out.println("Age after invalid attempt: " + person1.getAge());
         
         // Creating object using default constructor
         Person person3 = new Person();
@@ -46,18 +51,26 @@ public class OOPConcepts {
         System.out.println("After setting values - Person 3: " + person3.getName() + ", " + person3.getAge() + " years old");
         
         // Inheritance Example
-        System.out.println("\n4. Inheritance Example:");
+        System.out.println("\n4. INHERITANCE EXAMPLE:");
         Student student1 = new Student("Emma", 20, "Computer Science");
         System.out.println("Student: " + student1.getName() + ", " + student1.getAge() + " years old, Major: " + student1.getMajor());
-        student1.sayHello(); // Method inherited from Person
+        student1.sayHello(); // Method inherited from Person but overridden in Student
         student1.study();    // Method specific to Student
         
+        // Create a teacher
+        Teacher teacher1 = new Teacher("Prof. Smith", 45, "Computer Science");
+        System.out.println("\nTeacher: " + teacher1.getName() + ", " + teacher1.getAge() + " years old, Department: " + teacher1.getDepartment());
+        teacher1.sayHello();  // Method inherited from Person but overridden in Teacher
+        teacher1.teach();     // Method specific to Teacher
+        
         // Polymorphism Example
-        System.out.println("\n5. Polymorphism Example:");
+        System.out.println("\n5. POLYMORPHISM EXAMPLE:");
+        System.out.println("Different objects calling the same method with different implementations:");
+        
         Person[] people = new Person[3];
-        people[0] = person1;              // Person object
-        people[1] = student1;             // Student object (treated as Person)
-        people[2] = new Teacher("Prof. Smith", 45, "Computer Science"); // Teacher object (treated as Person)
+        people[0] = person1;  // Person object
+        people[1] = student1; // Student object (treated as Person)
+        people[2] = teacher1; // Teacher object (treated as Person)
         
         // Polymorphic behavior
         for (Person p : people) {
@@ -65,10 +78,15 @@ public class OOPConcepts {
         }
         
         // Abstraction Example
-        System.out.println("\n6. Abstraction Example:");
+        System.out.println("\n6. ABSTRACTION EXAMPLE:");
+        // We cannot instantiate an abstract class
+        // Shape shape = new Shape(); // This would cause an error
+        
+        // But we can create objects of concrete subclasses
         Shape circle = new Circle(5.0);
         Shape rectangle = new Rectangle(4.0, 6.0);
         
+        // We can call the abstract method which is implemented differently in each subclass
         System.out.println("Circle area: " + circle.calculateArea());
         System.out.println("Rectangle area: " + rectangle.calculateArea());
     }
