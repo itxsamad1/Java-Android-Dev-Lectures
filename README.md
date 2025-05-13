@@ -39,7 +39,7 @@ Lecture#X/
 
 - **Lecture #1: Introduction to Java and Android Development**  &nbsp;&nbsp;&nbsp;  *1st March, 2025*
 - **Lecture #2: Object-Oriented Programming in Java**  &nbsp;&nbsp;&nbsp;  *8th March, 2025*
-- **Lecture #3: Android Application Fundamentals**  &nbsp;&nbsp;&nbsp;  *15th March, 2025*
+- **[Lecture #3: Android UI Components and Event Handling](Lecture%233/README.md)**  &nbsp;&nbsp;&nbsp;  *15th March, 2025*
 - **Lecture #4: UI Design and Layouts**  &nbsp;&nbsp;&nbsp;  *22nd March, 2025*
 - **Lecture #5: Activities and Intents**  &nbsp;&nbsp;&nbsp;  *29th March, 2025*
 - **Lecture #6: Fragments and Navigation**  &nbsp;&nbsp;&nbsp;  *5th April, 2025*
