@@ -356,4 +356,48 @@ public class SplashActivity extends AppCompatActivity {
 ## Resources
 - [Android Intents Documentation](https://developer.android.com/guide/components/intents-filters)
 - [Splash Screen API Guide](https://developer.android.com/develop/ui/views/launch/splash-screen)
-- Lecture slides and notes in the PDF directory 
+- Lecture slides and notes in the PDF directory
+
+## Assignment #01: Multi-Activity Android Application
+
+The `Assignment1` directory contains a complete Android application that demonstrates core mobile development concepts including multi-screen navigation, user authentication, data handling, and interactive features.
+
+### Features
+
+1. **Splash Screen**
+   - Branded launch screen with automatic transition after 5 seconds
+   - Demonstrates use of Handler and Intent for delayed navigation
+
+2. **Main Activity**
+   - Central navigation hub with options for:
+     - Home (with Game)
+     - Admission Form
+     - Sign In
+     - Sign Up
+   - Implements Intent-based navigation between activities
+
+3. **Home Activity**
+   - Contains a Tic-Tac-Toe game implementation
+   - Demonstrates state management and user interaction
+
+4. **Sign In/Sign Up**
+   - User authentication with validation
+   - Data storage using SharedPreferences
+   - Form validation and error handling
+
+5. **Admission Form**
+   - Data collection from user
+   - Input validation
+   - Feedback using Toast messages
+
+### Implementation Details
+The assignment demonstrates practical application of:
+- Activity lifecycle management
+- Intent-based navigation
+- Data passing between activities
+- UI design with various layouts and components
+- Form handling and validation
+- SharedPreferences for simple data persistence
+
+### Source Code Reference
+The complete source code is also available at: [MAD-Assignment1-App-Java](https://github.com/itxsamad1/MAD-Assignment1-App-Java.git) 
