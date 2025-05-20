@@ -1,5 +1,26 @@
 # Lecture #4: Intents and Splash Screens
 
+## Overview
+
+### Intent Class
+An Intent is a messaging object used to request an action from another app component such as activities, services, and broadcast receivers. Intents facilitate communication between components in several ways:
+
+- **Starting Activities**: Launch a new activity or bring an existing one to the foreground
+- **Starting Services**: Initiate background operations through services
+- **Delivering Broadcasts**: Send system-wide announcements to registered BroadcastReceivers
+
+Intents can be explicit (specify the exact component to start) or implicit (declare a general action, allowing the system to find an appropriate component).
+
+### Splash Screen
+A Splash Screen is the initial screen displayed when an application launches. It serves multiple purposes:
+
+- **Branding Opportunity**: Showcases the app's logo, name, and identity
+- **User Experience**: Provides visual feedback that the app is loading
+- **Loading Time Management**: Masks initialization processes and resource loading
+- **First Impression**: Creates a professional first touchpoint with users
+
+Modern Android development offers both traditional Activity-based splash screens and the newer SplashScreen API introduced in Android 12.
+
 ## Topics Covered
 
 1. **Intent Class**
