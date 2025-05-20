@@ -26,8 +26,14 @@ Lecture#X/
 ├── README.md (lecture overview and exercises)
 ├── Notes.pdf (lecture slides and detailed notes)
 ├── SampleCode/ (example code demonstrated in class)
-└── Assignments/ (homework and practical tasks)
+├── Assignment#/ (complete assignment projects)
+└── HomeTask/ (smaller homework and practical tasks)
 ```
+
+The repository also includes several major assignments that demonstrate comprehensive Android application development:
+
+- **Assignment #1** - Multi-screen application with navigation, authentication, and interactive features (in Lecture#4)
+- Additional assignments will be added as the course progresses
 
 ## Prerequisites
 
@@ -40,7 +46,7 @@ Lecture#X/
 - **Lecture #1: Introduction to Java and Android Development**  &nbsp;&nbsp;&nbsp;  *1st March, 2025*
 - **Lecture #2: Android Architecture and UI Layouts**  &nbsp;&nbsp;&nbsp;  *8th March, 2025*
 - **Lecture #3: Android UI Components and Event Handling**  &nbsp;&nbsp;&nbsp;  *15th March, 2025*
-- **Lecture #4: UI Design and Layouts**  &nbsp;&nbsp;&nbsp;  *22nd March, 2025*
+- **Lecture #4: Intents and Splash Screens**  &nbsp;&nbsp;&nbsp;  *22nd March, 2025*
 - **Lecture #5: Activities and Intents**  &nbsp;&nbsp;&nbsp;  *29th March, 2025*
 - **Lecture #6: Fragments and Navigation**  &nbsp;&nbsp;&nbsp;  *5th April, 2025*
 - **Lecture #7: RecyclerView and Adapters**  &nbsp;&nbsp;&nbsp;  *26th April, 2025*
