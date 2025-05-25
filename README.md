@@ -47,7 +47,7 @@ The repository also includes several major assignments that demonstrate comprehe
 - **Lecture #2: Android Architecture and UI Layouts**  &nbsp;&nbsp;&nbsp;  *8th March, 2025*
 - **Lecture #3: Android UI Components and Event Handling**  &nbsp;&nbsp;&nbsp;  *15th March, 2025*
 - **Lecture #4: Intents and Splash Screens**  &nbsp;&nbsp;&nbsp;  *22nd March, 2025*
-- **Lecture #5: Activities and Intents**  &nbsp;&nbsp;&nbsp;  *29th March, 2025*
+- **Lecture #5: ListView and ArrayAdapter Implementation**  &nbsp;&nbsp;&nbsp;  *29th March, 2025*
 - **Lecture #6: Fragments and Navigation**  &nbsp;&nbsp;&nbsp;  *5th April, 2025*
 - **Lecture #7: RecyclerView and Adapters**  &nbsp;&nbsp;&nbsp;  *26th April, 2025*
 - **Lecture #8: Data Storage Options**  &nbsp;&nbsp;&nbsp;  *3rd May, 2025*
