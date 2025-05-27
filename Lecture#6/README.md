@@ -2,231 +2,195 @@
 
 ## Overview
 
-This lecture introduces Fragments in Android development, with a specific focus on Static Fragments. Fragments represent reusable portions of your app's UI and behavior that can be combined to build a dynamic and multi-pane user interface.
+This lecture introduces Fragments in Android development. Fragments represent a reusable portion of your app's UI and behavior that can be placed within an Activity. In this lecture, we focus on Static Fragments, which are defined directly in the Activity's layout using the `<fragment>` tag.
 
-### What are Fragments?
-A Fragment represents a reusable portion of your app's UI. You can think of a Fragment as a modular section of an activity – it has its own lifecycle, receives its own input events, and you can add or remove fragments while the activity is running.
+## Step-by-Step Implementation Guide
 
-### Static vs Dynamic Fragments
-- **Static Fragments** are defined in the activity's layout using the `<fragment>` element
-- **Dynamic Fragments** are added to an activity at runtime using FragmentManager
+### 1. Create New Android Project
+1. Open Android Studio
+2. Click `File > New > New Project`
+3. Select "Empty Views Activity"
+4. Configure your project:
+   - Name: "Lec6"
+   - Package name: com.example.lec6
+   - Language: Java
+   - Minimum SDK: API 24 (Android 7.0)
+5. Click "Finish"
 
-## Topics Covered
-
-1. **Fragment Fundamentals**
-   - Fragment Lifecycle
-   - Fragment Architecture
-   - Fragment-Activity Communication
-   - Fragment Layout Design
-
-2. **Static Fragment Implementation**
-   - XML Layout Definition
-   - Fragment Class Creation
-   - Fragment-Activity Integration
-   - State Management
-
-3. **Fragment Lifecycle**
+### 2. Add Fragment Dependencies
+1. Open `app/build.gradle`
+2. Add in dependencies block:
+   ```gradle
+   implementation 'androidx.fragment:fragment:1.6.2'
    ```
-   onAttach()
-       ↓
-   onCreate()
-       ↓
-   onCreateView()
-       ↓
-   onViewCreated()
-       ↓
-   onStart()
-       ↓
-   onResume()
-       ↓
-   onPause()
-       ↓
-   onStop()
-       ↓
-   onDestroyView()
-       ↓
-   onDestroy()
-       ↓
-   onDetach()
+3. Click "Sync Now"
+
+### 3. Create Fragment Layouts
+1. Create First Fragment Layout:
+   - Right-click on `res/layout` folder
+   - Select `New > Layout Resource File`
+   - Name: `fragment_first.xml`
+   - Root element: LinearLayout
+   - Add this content:
+     ```xml
+     <?xml version="1.0" encoding="utf-8"?>
+     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:orientation="vertical"
+         android:gravity="center"
+         android:background="#E8F5E9">
+
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="First Fragment"
+             android:textSize="24sp"
+             android:textStyle="bold" />
+
+         <Button
+             android:id="@+id/btnFirst"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="First Fragment Button"
+             android:layout_marginTop="16dp" />
+
+     </LinearLayout>
+     ```
+
+2. Create Second Fragment Layout:
+   - Create `fragment_second.xml`
+   - Add similar content with different background and text
+
+### 4. Create Fragment Classes
+1. Create First Fragment:
+   - Right-click on your package in `java` folder
+   - Select `New > Fragment > Fragment (Blank)`
+   - Name: `FirstFragment`
+   - Uncheck "Include fragment factory methods"
+   - Uncheck "Include interface callbacks"
+   - Click Finish
+   - Update the code:
+     ```java
+     public class FirstFragment extends Fragment {
+         @Override
+         public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                Bundle savedInstanceState) {
+             View view = inflater.inflate(R.layout.fragment_first, container, false);
+             
+             Button btnFirst = view.findViewById(R.id.btnFirst);
+             btnFirst.setOnClickListener(v -> {
+                 Toast.makeText(getContext(), "First Fragment Button Clicked", 
+                              Toast.LENGTH_SHORT).show();
+             });
+             
+             return view;
+         }
+     }
+     ```
+
+2. Create Second Fragment:
+   - Follow same steps for `SecondFragment`
+   - Update code similarly
+
+### 5. Update MainActivity Layout
+1. Open `activity_main.xml`
+2. Replace content with:
+   ```xml
+   <?xml version="1.0" encoding="utf-8"?>
+   <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical">
+
+       <fragment
+           android:id="@+id/fragmentFirst"
+           android:name="com.example.lec6.FirstFragment"
+           android:layout_width="match_parent"
+           android:layout_height="0dp"
+           android:layout_weight="1" />
+
+       <fragment
+           android:id="@+id/fragmentSecond"
+           android:name="com.example.lec6.SecondFragment"
+           android:layout_width="match_parent"
+           android:layout_height="0dp"
+           android:layout_weight="1" />
+
+   </LinearLayout>
    ```
 
-## Implementation Guide
+### 6. Update MainActivity
+1. Open `MainActivity.java`
+2. Update the code:
+   ```java
+   public class MainActivity extends AppCompatActivity {
+       @Override
+       protected void onCreate(Bundle savedInstanceState) {
+           super.onCreate(savedInstanceState);
+           setContentView(R.layout.activity_main);
+       }
+   }
+   ```
 
-### 1. Create Fragment Layout
-```xml
-<!-- fragment_example.xml -->
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
-
-    <TextView
-        android:id="@+id/fragmentText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="This is a Static Fragment"
-        android:textSize="20sp"/>
-
-    <Button
-        android:id="@+id/fragmentButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Fragment Button"/>
-
-</LinearLayout>
-```
-
-### 2. Create Fragment Class
-```java
-public class ExampleFragment extends Fragment {
-    private TextView fragmentText;
-    private Button fragmentButton;
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                           Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_example, container, false);
-        
-        // Initialize views
-        fragmentText = view.findViewById(R.id.fragmentText);
-        fragmentButton = view.findViewById(R.id.fragmentButton);
-        
-        // Set click listener
-        fragmentButton.setOnClickListener(v -> {
-            // Handle button click
-            Toast.makeText(getContext(), "Fragment Button Clicked", 
-                Toast.LENGTH_SHORT).show();
-        });
-        
-        return view;
-    }
-}
-```
-
-### 3. Add Fragment to Activity Layout
-```xml
-<!-- activity_main.xml -->
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <fragment
-        android:id="@+id/example_fragment"
-        android:name="com.example.app.ExampleFragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-</LinearLayout>
-```
-
-### 4. Activity Implementation
-```java
-public class MainActivity extends AppCompatActivity {
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        
-        // The fragment is automatically created and managed
-        // because it's defined in the layout XML
-    }
-}
-```
-
-## Fragment-Activity Communication
-
-### 1. Define Interface
-```java
-public class ExampleFragment extends Fragment {
-    public interface OnFragmentInteractionListener {
-        void onFragmentInteraction(String data);
-    }
-    
-    private OnFragmentInteractionListener mListener;
-    
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                + " must implement OnFragmentInteractionListener");
-        }
-    }
-}
-```
-
-### 2. Implement Interface in Activity
-```java
-public class MainActivity extends AppCompatActivity 
-        implements ExampleFragment.OnFragmentInteractionListener {
-    
-    @Override
-    public void onFragmentInteraction(String data) {
-        // Handle the interaction
-        Toast.makeText(this, "Fragment sent: " + data, 
-            Toast.LENGTH_SHORT).show();
-    }
-}
-```
-
-## Best Practices
-
-1. **Fragment Independence**
-   - Design fragments to be as independent as possible
-   - Avoid direct references to parent activities
-   - Use interfaces for fragment-activity communication
-
-2. **State Management**
-   - Save and restore fragment state properly
-   - Use `onSaveInstanceState()` for temporary state
-   - Consider using ViewModel for persistent state
-
-3. **Lifecycle Awareness**
-   - Handle lifecycle events appropriately
-   - Clean up resources in `onDestroyView()`
-   - Consider using Lifecycle-Aware components
-
-4. **Layout Design**
-   - Keep fragment layouts modular
-   - Use ConstraintLayout for complex UIs
-   - Consider different screen sizes and orientations
+### 7. Run and Test
+1. Click the green "Run" button (or press Shift + F10)
+2. Select your device/emulator
+3. Test the app:
+   - Verify both fragments are visible
+   - Test buttons in each fragment
+   - Check fragment layouts and styling
 
 ## Common Issues and Solutions
 
-1. **Fragment Already Added**
-   ```java
-   // Check if fragment exists before adding
-   Fragment fragment = getSupportFragmentManager()
-       .findFragmentById(R.id.fragment_container);
-   if (fragment == null) {
-       // Add the fragment
-   }
-   ```
+1. **Fragment Not Showing**
+   - Check fragment class name in layout matches exactly
+   - Verify fragment layout is properly inflated
+   - Check fragment container dimensions
 
-2. **Activity-Fragment Communication**
-   ```java
-   // In Fragment
-   if (getActivity() != null) {
-       // Interact with activity
-   }
-   ```
+2. **Resource Not Found**
+   - Clean and rebuild project
+   - Check resource IDs are correct
+   - Verify XML syntax
 
-3. **State Loss Exception**
-   ```java
-   // Use commitAllowingStateLoss() when appropriate
-   fragmentTransaction.commitAllowingStateLoss();
-   ```
+3. **Fragment Lifecycle Issues**
+   - Handle configuration changes properly
+   - Use proper lifecycle methods
+   - Save and restore state when needed
 
-## Resources
+## Best Practices
+
+1. **Fragment Management**
+   - Keep fragments independent and reusable
+   - Handle lifecycle events properly
+   - Use proper fragment communication patterns
+
+2. **Layout Design**
+   - Use appropriate layouts for different screen sizes
+   - Handle orientation changes
+   - Follow Material Design guidelines
+
+3. **Code Organization**
+   - Keep fragment code modular
+   - Use proper package structure
+   - Follow clean code principles
+
+## Additional Resources
 - [Android Fragments Guide](https://developer.android.com/guide/fragments)
 - [Fragment Lifecycle](https://developer.android.com/guide/fragments/lifecycle)
-- [Fragment API Reference](https://developer.android.com/reference/androidx/fragment/app/Fragment)
-- [Fragment Design Patterns](https://developer.android.com/guide/fragments/design) 
+- [Fragment Communication](https://developer.android.com/guide/fragments/communicate)
+
+## Project Structure
+```
+app/
+├── java/
+│   └── com.example.lec6/
+│       ├── MainActivity.java
+│       ├── FirstFragment.java
+│       └── SecondFragment.java
+└── res/
+    └── layout/
+        ├── activity_main.xml
+        ├── fragment_first.xml
+        └── fragment_second.xml
+``` 

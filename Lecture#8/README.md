@@ -1,226 +1,358 @@
-# Lecture #8: Android Navigation Components
+# Lecture #8: Navigation Components
 
 ## Overview
 
-This lecture covers various navigation components in Android, focusing on four main types of navigation menus: Bottom Navigation, Top TabLayout, Bottom TabLayout, and Navigation Drawer. These components are essential for creating intuitive and user-friendly navigation in Android applications.
+This lecture covers four different types of navigation components in Android:
+1. Bottom Navigation Menu
+2. Top TabLayout
+3. Bottom TabLayout
+4. Navigation Drawer
 
-## Topics Covered
+Each component is implemented in separate projects to demonstrate their unique characteristics and use cases.
 
-### 1. Bottom Navigation Menu
-A material design bottom navigation bar that makes it easy to explore and switch between top-level views in a single tap.
+## Project Structure
+- `Lec8b/` - Bottom Navigation Menu implementation
+- `Lec8c/` - Top TabLayout implementation
+- `Lec8d/` - Bottom TabLayout implementation
+- `Lec8/` - Navigation Drawer implementation
 
-#### Implementation Steps:
+## Step-by-Step Implementation Guides
 
-1. **Add Dependencies**
+### Bottom Navigation Menu (Lec8b)
+
+#### 1. Create New Project
+1. Open Android Studio
+2. Click `File > New > New Project`
+3. Select "Empty Views Activity"
+4. Configure project:
+   - Name: "Lec8b"
+   - Package name: com.example.lec8b
+   - Language: Java
+   - Minimum SDK: API 24
+
+#### 2. Add Dependencies
+1. Open `app/build.gradle`
+2. Add dependencies:
    ```gradle
    implementation 'com.google.android.material:material:1.11.0'
    implementation 'androidx.navigation:navigation-fragment:2.7.7'
    implementation 'androidx.navigation:navigation-ui:2.7.7'
    ```
+3. Click "Sync Now"
 
-2. **Create Menu Resource**
+#### 3. Create Navigation Graph
+1. Right-click `res` > New > Android Resource File
+2. Configure:
+   - Name: nav_graph
+   - Resource type: Navigation
+3. Add destinations in `nav_graph.xml`:
    ```xml
-   <!-- bottom_nav_menu.xml -->
+   <?xml version="1.0" encoding="utf-8"?>
+   <navigation xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:app="http://schemas.android.com/apk/res-auto"
+       android:id="@+id/nav_graph"
+       app:startDestination="@id/navigation_home">
+
+       <fragment
+           android:id="@+id/navigation_home"
+           android:name="com.example.lec8b.ui.home.HomeFragment"
+           android:label="Home" />
+
+       <fragment
+           android:id="@+id/navigation_dashboard"
+           android:name="com.example.lec8b.ui.dashboard.DashboardFragment"
+           android:label="Dashboard" />
+
+       <fragment
+           android:id="@+id/navigation_notifications"
+           android:name="com.example.lec8b.ui.notifications.NotificationsFragment"
+           android:label="Notifications" />
+   </navigation>
+   ```
+
+#### 4. Create Menu Resource
+1. Right-click `res` > New > Android Resource File
+2. Configure:
+   - Name: bottom_nav_menu
+   - Resource type: Menu
+3. Add items in `bottom_nav_menu.xml`:
+   ```xml
+   <?xml version="1.0" encoding="utf-8"?>
    <menu xmlns:android="http://schemas.android.com/apk/res/android">
        <item
            android:id="@+id/navigation_home"
            android:icon="@drawable/ic_home"
-           android:title="Home"/>
+           android:title="Home" />
        <item
            android:id="@+id/navigation_dashboard"
            android:icon="@drawable/ic_dashboard"
-           android:title="Dashboard"/>
+           android:title="Dashboard" />
        <item
            android:id="@+id/navigation_notifications"
            android:icon="@drawable/ic_notifications"
-           android:title="Notifications"/>
+           android:title="Notifications" />
    </menu>
    ```
 
-3. **Add BottomNavigationView to Layout**
+#### 5. Update MainActivity Layout
+1. Open `activity_main.xml`:
    ```xml
-   <com.google.android.material.bottomnavigation.BottomNavigationView
-       android:id="@+id/bottom_navigation"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       app:menu="@menu/bottom_nav_menu"/>
-   ```
-
-4. **Handle Navigation in Activity**
-   ```java
-   bottomNav.setOnItemSelectedListener(item -> {
-       Fragment selectedFragment = null;
-       
-       if (item.getItemId() == R.id.navigation_home) {
-           selectedFragment = new HomeFragment();
-       } else if (item.getItemId() == R.id.navigation_dashboard) {
-           selectedFragment = new DashboardFragment();
-       } else if (item.getItemId() == R.id.navigation_notifications) {
-           selectedFragment = new NotificationsFragment();
-       }
-       
-       if (selectedFragment != null) {
-           getSupportFragmentManager().beginTransaction()
-               .replace(R.id.fragment_container, selectedFragment)
-               .commit();
-       }
-       return true;
-   });
-   ```
-
-### 2. Top TabLayout
-Provides a horizontal layout to display tabs, typically used with ViewPager2 for swipeable content.
-
-#### Implementation Steps:
-
-1. **Add TabLayout to Layout**
-   ```xml
-   <com.google.android.material.tabs.TabLayout
-       android:id="@+id/tabLayout"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"/>
-
-   <androidx.viewpager2.widget.ViewPager2
-       android:id="@+id/viewPager"
-       android:layout_width="match_parent"
-       android:layout_height="0dp"
-       android:layout_weight="1"/>
-   ```
-
-2. **Create ViewPager Adapter**
-   ```java
-   public class ViewPagerAdapter extends FragmentStateAdapter {
-       @Override
-       public Fragment createFragment(int position) {
-           return TabFragment.newInstance(position);
-       }
-
-       @Override
-       public int getItemCount() {
-           return TAB_COUNT;
-       }
-   }
-   ```
-
-3. **Connect TabLayout with ViewPager2**
-   ```java
-   new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {
-       tab.setText("Tab " + (position + 1));
-   }).attach();
-   ```
-
-### 3. Bottom TabLayout
-Similar to Top TabLayout but positioned at the bottom of the screen.
-
-#### Implementation:
-- Similar to Top TabLayout but with different layout positioning
-- Often combined with ViewPager2 for swipeable content
-- Can be customized with different tab styles and indicators
-
-### 4. Navigation Drawer
-A panel that slides in from the edge of the screen, containing navigation options.
-
-#### Implementation Steps:
-
-1. **Create Drawer Layout**
-   ```xml
-   <androidx.drawerlayout.widget.DrawerLayout
-       android:id="@+id/drawer_layout"
+   <?xml version="1.0" encoding="utf-8"?>
+   <androidx.constraintlayout.widget.ConstraintLayout
        android:layout_width="match_parent"
        android:layout_height="match_parent">
-       
-       <!-- Main Content -->
-       <FrameLayout
-           android:id="@+id/content_frame"
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"/>
-       
-       <!-- Navigation Drawer -->
-       <com.google.android.material.navigation.NavigationView
+
+       <com.google.android.material.bottomnavigation.BottomNavigationView
            android:id="@+id/nav_view"
-           android:layout_width="wrap_content"
-           android:layout_height="match_parent"
-           android:layout_gravity="start"
-           app:menu="@menu/drawer_menu"/>
-           
-   </androidx.drawerlayout.widget.DrawerLayout>
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginStart="0dp"
+           android:layout_marginEnd="0dp"
+           android:background="?android:attr/windowBackground"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintLeft_toLeftOf="parent"
+           app:layout_constraintRight_toRightOf="parent"
+           app:menu="@menu/bottom_nav_menu" />
+
+       <fragment
+           android:id="@+id/nav_host_fragment"
+           android:name="androidx.navigation.fragment.NavHostFragment"
+           android:layout_width="match_parent"
+           android:layout_height="0dp"
+           app:defaultNavHost="true"
+           app:layout_constraintBottom_toTopOf="@id/nav_view"
+           app:layout_constraintLeft_toLeftOf="parent"
+           app:layout_constraintRight_toRightOf="parent"
+           app:layout_constraintTop_toTopOf="parent"
+           app:navGraph="@navigation/nav_graph" />
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
    ```
 
-2. **Create Drawer Menu**
-   ```xml
-   <menu xmlns:android="http://schemas.android.com/apk/res/android">
-       <item
-           android:id="@+id/nav_home"
-           android:icon="@drawable/ic_home"
-           android:title="Home"/>
-       <item
-           android:id="@+id/nav_gallery"
-           android:icon="@drawable/ic_gallery"
-           android:title="Gallery"/>
-       <item
-           android:id="@+id/nav_settings"
-           android:icon="@drawable/ic_settings"
-           android:title="Settings"/>
-   </menu>
-   ```
+#### 6. Update MainActivity
+```java
+public class MainActivity extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        BottomNavigationView navView = findViewById(R.id.nav_view);
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        NavigationUI.setupWithNavController(navView, navController);
+    }
+}
+```
 
-3. **Setup Navigation Drawer**
-   ```java
-   ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-       this, drawerLayout, toolbar,
-       R.string.drawer_open,
-       R.string.drawer_close);
-   drawerLayout.addDrawerListener(toggle);
-   toggle.syncState();
-   
-   navigationView.setNavigationItemSelectedListener(item -> {
-       // Handle navigation view item clicks here
-       int id = item.getItemId();
-       
-       if (id == R.id.nav_home) {
-           // Handle home action
-       } else if (id == R.id.nav_gallery) {
-           // Handle gallery action
-       }
-       
-       drawerLayout.closeDrawer(GravityCompat.START);
-       return true;
-   });
-   ```
+### Top TabLayout (Lec8c)
+
+#### 1. Create New Project
+1. Follow same steps as above, name it "Lec8c"
+
+#### 2. Add Dependencies
+```gradle
+implementation 'com.google.android.material:material:1.11.0'
+```
+
+#### 3. Update MainActivity Layout
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabMode="fixed"
+        app:tabGravity="fill" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
+```
+
+#### 4. Create ViewPagerAdapter
+```java
+public class ViewPagerAdapter extends FragmentStateAdapter {
+    private final List<Fragment> fragments = new ArrayList<>();
+    private final List<String> fragmentTitles = new ArrayList<>();
+
+    public ViewPagerAdapter(@NonNull FragmentActivity fa) {
+        super(fa);
+    }
+
+    public void addFragment(Fragment fragment, String title) {
+        fragments.add(fragment);
+        fragmentTitles.add(title);
+    }
+
+    @NonNull
+    @Override
+    public Fragment createFragment(int position) {
+        return fragments.get(position);
+    }
+
+    @Override
+    public int getItemCount() {
+        return fragments.size();
+    }
+
+    public String getPageTitle(int position) {
+        return fragmentTitles.get(position);
+    }
+}
+```
+
+#### 5. Update MainActivity
+```java
+public class MainActivity extends AppCompatActivity {
+    private TabLayout tabLayout;
+    private ViewPager2 viewPager;
+    private ViewPagerAdapter adapter;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        viewPager = findViewById(R.id.viewPager);
+        tabLayout = findViewById(R.id.tabLayout);
+
+        adapter = new ViewPagerAdapter(this);
+        adapter.addFragment(new HomeFragment(), "Home");
+        adapter.addFragment(new DashboardFragment(), "Dashboard");
+        adapter.addFragment(new NotificationsFragment(), "Notifications");
+
+        viewPager.setAdapter(adapter);
+
+        new TabLayoutMediator(tabLayout, viewPager,
+            (tab, position) -> tab.setText(adapter.getPageTitle(position))
+        ).attach();
+    }
+}
+```
+
+### Navigation Drawer (Lec8)
+
+#### 1. Create New Project
+1. Use Android Studio's "Navigation Drawer Activity" template
+2. Name: "Lec8"
+
+#### 2. Update navigation_drawer.xml
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_gallery"
+            android:title="Gallery" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_slideshow"
+            android:title="Slideshow" />
+    </group>
+</menu>
+```
+
+#### 3. Update MainActivity
+```java
+public class MainActivity extends AppCompatActivity {
+    private DrawerLayout drawer;
+    private NavigationView navigationView;
+    private ActionBarDrawerToggle toggle;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        drawer = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+        
+        toggle = new ActionBarDrawerToggle(
+            this, drawer, toolbar,
+            R.string.navigation_drawer_open,
+            R.string.navigation_drawer_close);
+        
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        navigationView.setNavigationItemSelectedListener(item -> {
+            // Handle navigation view item clicks here
+            int id = item.getItemId();
+            Fragment fragment = null;
+
+            if (id == R.id.nav_home) {
+                fragment = new HomeFragment();
+            } else if (id == R.id.nav_gallery) {
+                fragment = new GalleryFragment();
+            } else if (id == R.id.nav_slideshow) {
+                fragment = new SlideshowFragment();
+            }
+
+            if (fragment != null) {
+                getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.nav_host_fragment, fragment)
+                    .commit();
+            }
+
+            drawer.closeDrawer(GravityCompat.START);
+            return true;
+        });
+    }
+}
+```
+
+## Common Issues and Solutions
+
+1. **Navigation Components Not Working**
+   - Check dependency versions
+   - Verify menu item IDs match navigation graph IDs
+   - Ensure NavHostFragment is properly configured
+
+2. **ViewPager2 Issues**
+   - Use FragmentStateAdapter instead of FragmentPagerAdapter
+   - Handle fragment lifecycle properly
+   - Use TabLayoutMediator for connecting TabLayout
+
+3. **Drawer Issues**
+   - Verify drawer layout is root view
+   - Check ActionBarDrawerToggle setup
+   - Handle configuration changes
 
 ## Best Practices
 
-1. **Navigation Pattern Selection**
-   - Use Bottom Navigation for 3-5 top-level destinations
-   - Use Navigation Drawer for 5+ destinations
-   - Use TabLayout for related, frequently switched content
+1. **Navigation**
+   - Use Navigation Component when possible
+   - Handle back stack properly
+   - Implement proper up/back navigation
 
-2. **Visual Feedback**
-   - Provide clear visual indicators for selected items
-   - Use consistent icons and labels
-   - Implement smooth transitions between destinations
+2. **Fragment Management**
+   - Save fragment state
+   - Handle configuration changes
+   - Clean up resources
 
-3. **Performance**
-   - Lazy load fragments when possible
-   - Cache fragments appropriately
-   - Handle configuration changes properly
+3. **UI/UX**
+   - Follow Material Design guidelines
+   - Add appropriate animations
+   - Handle edge cases and errors
 
-4. **Accessibility**
-   - Provide content descriptions for navigation items
-   - Ensure proper focus order
-   - Support keyboard navigation
-
-## Common Pitfalls
-
-1. Improper fragment management leading to memory leaks
-2. Not handling configuration changes correctly
-3. Overcrowding navigation menus
-4. Inconsistent navigation patterns
-5. Poor state preservation during navigation
-
-## Resources
-
+## Additional Resources
+- [Navigation Component Guide](https://developer.android.com/guide/navigation)
 - [Material Design Navigation](https://material.io/components/navigation-drawer)
-- [Android Navigation Component](https://developer.android.com/guide/navigation)
-- [Bottom Navigation](https://material.io/components/bottom-navigation)
-- [Navigation Drawer](https://material.io/components/navigation-drawer) 
+- [ViewPager2 Documentation](https://developer.android.com/guide/navigation/navigation-swipe-view-2) 
