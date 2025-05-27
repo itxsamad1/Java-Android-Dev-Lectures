@@ -51,7 +51,7 @@ The repository also includes several major assignments that demonstrate comprehe
 - **Lecture #6: Static Fragments**  &nbsp;&nbsp;&nbsp;  *26th April, 2025*
 - **Lecture #7: Dynamic Fragments**  &nbsp;&nbsp;&nbsp;  *3rd May, 2025*
 - **Lecture #8: Navigation Components**  &nbsp;&nbsp;&nbsp;  *10th May, 2025*
-- **Lecture #9: Backend and Database (Node.js & Express.js and PostgreSQL)**  &nbsp;&nbsp;&nbsp;  *17th May, 2025*
+- **Lecture #9: Backend and Database (Node.js , Express.js & PostgreSQL)**  &nbsp;&nbsp;&nbsp;  *17th May, 2025*
 - **Lecture #10: API Integration**  &nbsp;&nbsp;&nbsp;  *24th May, 2025*
 - **Lecture #11: Location and Maps**
 - **Lecture #12: Publishing and Monetization**
