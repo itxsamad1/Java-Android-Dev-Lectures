@@ -1,138 +1,132 @@
-# Lecture #7: RecyclerView and Adapters
+# Lecture #7: Dynamic Fragments
 
 ## Overview
 
-This lecture focuses on implementing RecyclerView, a more advanced and flexible version of ListView. RecyclerView is designed to display large sets of data efficiently by recycling and reusing view holders, making it more memory-efficient and performant than ListView.
+This lecture focuses on implementing Dynamic Fragments in Android, building upon the static fragments covered in Lecture 6. We'll create a WhatsApp-like interface where fragments are loaded dynamically based on user interaction.
 
 ## Topics Covered
 
-### 1. RecyclerView Fundamentals
-- Understanding the RecyclerView architecture
-- Key components: LayoutManager, Adapter, ViewHolder
-- View recycling mechanism
-- Performance benefits over ListView
+### 1. Dynamic Fragment Fundamentals
+- Understanding Fragment Manager
+- Fragment Transactions
+- Adding vs Replacing Fragments
+- Fragment Backstack Management
 
-### 2. RecyclerView Components
-- **LayoutManager**: Controls layout arrangement
-  - LinearLayoutManager (vertical/horizontal)
-  - GridLayoutManager
-  - StaggeredGridLayoutManager
-  
-- **Adapter**: Bridge between data and views
-  - Creating custom adapters
-  - ViewHolder pattern implementation
-  - Data binding in adapters
-  
-- **ViewHolder**: Cache of view references
-  - View caching mechanism
-  - Efficient view lookup
-  - Memory optimization
+### 2. Implementation Components
+- **FragmentManager**: Manages fragments in an activity
+- **FragmentTransaction**: Handles fragment operations
+- **FrameLayout**: Container for dynamic fragments
+- **Fragment Communication**: Between activity and fragments
 
-### 3. Implementation Steps
+### 3. WhatsApp-like Interface Implementation
 
-1. **Add RecyclerView Dependency**
-   ```gradle
-   implementation 'androidx.recyclerview:recyclerview:1.3.2'
-   ```
-
-2. **Add RecyclerView to Layout**
+1. **Setup Layout with Fragment Container**
    ```xml
-   <androidx.recyclerview.widget.RecyclerView
-       android:id="@+id/recyclerView"
+   <FrameLayout
+       android:id="@+id/fragcontainer"
        android:layout_width="match_parent"
        android:layout_height="match_parent"/>
    ```
 
-3. **Create ViewHolder Class**
+2. **Create Navigation Buttons**
+   ```xml
+   <Button
+       android:id="@+id/btnchat"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Chat"/>
+
+   <Button
+       android:id="@+id/btnstatus"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Status"/>
+
+   <Button
+       android:id="@+id/btncall"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Call"/>
+   ```
+
+3. **Fragment Classes Implementation**
    ```java
-   public class MyViewHolder extends RecyclerView.ViewHolder {
-       TextView textView;
-       
-       public MyViewHolder(@NonNull View itemView) {
-           super(itemView);
-           textView = itemView.findViewById(R.id.text_view);
+   public class chatFragment extends Fragment {
+       @Override
+       public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                              Bundle savedInstanceState) {
+           return inflater.inflate(R.layout.fragment_chat, container, false);
        }
+   }
+
+   // Similar implementation for StatusFragment and CallFragment
+   ```
+
+4. **Dynamic Fragment Loading**
+   ```java
+   public void loadFragment(Fragment fragment, int flag) {
+       FragmentManager fm = getSupportFragmentManager();
+       FragmentTransaction ft = fm.beginTransaction();
+       if (flag == 0)
+           ft.add(R.id.fragcontainer, fragment);
+       else
+           ft.replace(R.id.fragcontainer, fragment);
+       ft.commit();
    }
    ```
 
-4. **Create Custom Adapter**
+5. **Button Click Handlers**
    ```java
-   public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
-       private List<String> data;
-       
-       @NonNull
-       @Override
-       public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-           View view = LayoutInflater.from(parent.getContext())
-               .inflate(R.layout.item_layout, parent, false);
-           return new MyViewHolder(view);
-       }
-       
-       @Override
-       public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-           holder.textView.setText(data.get(position));
-       }
-       
-       @Override
-       public int getItemCount() {
-           return data.size();
-       }
-   }
+   Chat.setOnClickListener(view -> {
+       loadFragment(new chatFragment(), 1);
+   });
+
+   Status.setOnClickListener(view -> {
+       loadFragment(new StatusFragment(), 1);
+   });
+
+   Call.setOnClickListener(view -> {
+       loadFragment(new callFragment(), 1);
+   });
    ```
 
-5. **Setup RecyclerView in Activity**
-   ```java
-   RecyclerView recyclerView = findViewById(R.id.recyclerView);
-   recyclerView.setLayoutManager(new LinearLayoutManager(this));
-   MyAdapter adapter = new MyAdapter(dataList);
-   recyclerView.setAdapter(adapter);
-   ```
+### 4. Best Practices
+- Initialize default fragment on activity creation
+- Handle fragment lifecycle properly
+- Manage fragment backstack when needed
+- Use proper fragment transaction flags
+- Clean up resources when fragments are destroyed
 
-### 4. Advanced Features
-- Item decorations for spacing and dividers
-- Item animations
-- Click listeners for items
-- Swipe-to-dismiss functionality
-- Drag and drop support
+### 5. Common Pitfalls
+1. Fragment transaction after activity saved state
+2. Not handling configuration changes
+3. Memory leaks in fragments
+4. Improper fragment communication
+5. Not using fragment manager correctly
 
-### 5. Best Practices
-- Use efficient item layouts
-- Implement view holder pattern correctly
-- Avoid heavy operations in onBindViewHolder
-- Use DiffUtil for efficient updates
-- Handle item clicks properly
-- Implement pagination when needed
-
-## Sample Code Structure
-
+## Project Structure
 ```
 app/
 ├── src/
 │   ├── main/
 │   │   ├── java/
 │   │   │   ├── MainActivity.java
-│   │   │   ├── adapter/
-│   │   │   │   ├── CustomAdapter.java
-│   │   │   │   └── CustomViewHolder.java
-│   │   │   └── model/
-│   │   │       └── DataModel.java
+│   │   │   ├── fragments/
+│   │   │   │   ├── chatFragment.java
+│   │   │   │   ├── StatusFragment.java
+│   │   │   │   └── callFragment.java
 │   │   └── res/
 │   │       ├── layout/
 │   │       │   ├── activity_main.xml
-│   │       │   └── item_layout.xml
+│   │       │   ├── fragment_chat.xml
+│   │       │   ├── fragment_status.xml
+│   │       │   └── fragment_call.xml
 │   │       └── values/
 │   │           └── strings.xml
 └── build.gradle
 ```
 
-## Common Pitfalls
-1. Not using ViewHolder pattern correctly
-2. Heavy operations in onBindViewHolder
-3. Incorrect layout parameters
-4. Not handling item clicks properly
-5. Memory leaks in adapters
-
 ## Resources
-- [Android Developer Documentation - RecyclerView](https://developer.android.com/develop/ui/views/layout/recyclerview)
-- [Material Design Guidelines](https://material.io/components/lists)
-- [CodeLabs - RecyclerView Fundamentals](https://developer.android.com/codelabs/android-training-create-recycler-view) 
+- [Android Fragments Guide](https://developer.android.com/guide/fragments)
+- [Fragment Transactions & Activity State Loss](https://www.androiddesignpatterns.com/2013/08/fragment-transaction-commit-state-loss.html)
+- [Fragment Manager](https://developer.android.com/reference/androidx/fragment/app/FragmentManager) 
