@@ -18,6 +18,31 @@ Assignment task: Create an app that displays data from all database tables using
 - RecyclerView for data display
 - Backend API connectivity
 
+#### Assignment2 App Screenshots
+
+Here are the screenshots of the completed Assignment2 app showing different data tables:
+
+1. **Splash Screen**
+   ![Splash Screen](images/assignment2/splash.png)
+
+2. **Course Table**
+   ![Course Table](images/assignment2/course.png)
+
+3. **Enrollment Table**
+   ![Enrollment Table](images/assignment2/enrollment.png)
+
+4. **Student Table**
+   ![Student Table](images/assignment2/student.png)
+
+5. **Teacher Table**
+   ![Teacher Table](images/assignment2/teacher.png)
+
+The app demonstrates:
+- Navigation bar for switching between tables
+- Clean table layout for data display
+- Proper data formatting
+- Responsive design
+
 ## Implementation Details
 
 ### Main Components
