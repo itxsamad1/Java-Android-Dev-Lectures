@@ -10,6 +10,84 @@ This project demonstrates the setup and implementation of a RESTful API using No
 3. Create necessary database tables (e.g., teacher table)
 4. Insert dummy data into the tables for testing
 
+#### Database Schema and Data
+Below are the SQL queries used to create the database schema and insert initial data:
+
+```sql
+-- Create Teacher table
+CREATE TABLE Teacher(
+  TID serial primary key,
+  TName varchar(28) not null
+);
+
+-- Create Student table
+CREATE TABLE Student(
+  SID serial primary key,
+  SName varchar(28) not null,
+  SEmail varchar(100) unique,
+  Address varchar(150) not null
+);
+
+-- Create Course table
+CREATE TABLE Course(
+  Course_Code varchar(6) primary key,
+  CName varchar(28) not null
+);
+
+-- Create Enrollment table (Many-to-Many relationship between Student and Course)
+CREATE TABLE Enrollment(
+  Course_code varchar(6) references course(Course_code),
+  SID int references Student(SID),
+  primary key(Course_code,SID)
+);
+
+-- Create Teaches table (Many-to-Many relationship between Teacher and Course)
+CREATE TABLE Teaches(
+  Course_code varchar(6) references course(Course_code),
+  TID int references Teacher(TID),
+  primary key(Course_code,TID)
+);
+
+-- Insert sample student data
+INSERT INTO Student (SName, SEmail, Address) VALUES
+('Ali Khan', 'ali.khan@example.com', 'Karachi, Pakistan'),
+('Sara Ahmed', 'sara.ahmed@example.com', 'Lahore, Pakistan'),
+('Usman Tariq', 'usman.tariq@example.com', 'Islamabad, Pakistan'),
+('Fatima Noor', 'fatima.noor@example.com', 'Peshawar, Pakistan'),
+('Bilal Saeed', 'bilal.saeed@example.com', 'Quetta, Pakistan'),
+('Ayesha Iqbal', 'ayesha.iqbal@example.com', 'Multan, Pakistan'),
+('Hamza Raza', 'hamza.raza@example.com', 'Faisalabad, Pakistan'),
+('Nida Zahid', 'nida.zahid@example.com', 'Rawalpindi, Pakistan'),
+('Zain Ali', 'zain.ali@example.com', 'Hyderabad, Pakistan'),
+('Mariam Khan', 'mariam.khan@example.com', 'Sialkot, Pakistan');
+
+-- Insert sample teacher data
+INSERT INTO Teacher (TName) VALUES
+('Dr. Asim Shah'),
+('Prof. Nadia Khan'),
+('Dr. Bilal Hashmi'),
+('Ms. Saba Noor'),
+('Dr. Zeeshan Ali'),
+('Mr. Kamran Qureshi'),
+('Dr. Hina Tariq'),
+('Prof. Waqar Zia'),
+('Ms. Anum Rafiq'),
+('Dr. Fahad Rehman');
+
+-- Insert sample course data
+INSERT INTO Course (Course_Code, CName) VALUES
+('CS101', 'Intro to CS'),
+('CS102', 'Data Structures'),
+('CS103', 'Databases'),
+('CS104', 'Web Dev'),
+('CS105', 'AI Basics'),
+('CS106', 'OOP Concepts'),
+('CS107', 'Computer Networks'),
+('CS108', 'Operating Systems'),
+('CS109', 'Machine Learning'),
+('CS110', 'Software Engg');
+```
+
 ### 2. Project Structure
 ```
 SMIUAPI/
