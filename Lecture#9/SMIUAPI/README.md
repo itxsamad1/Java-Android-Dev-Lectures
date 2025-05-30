@@ -1,4 +1,4 @@
-# SMIU API with Neon PostgreSQL
+# BackEnd and DataBase using Node.js , Express.js and Neon PostgreSQL
 
 This project demonstrates the setup and implementation of a RESTful API using Node.js, Express.js, and Neon PostgreSQL database. The API provides endpoints to interact with the SMIU database.
 
