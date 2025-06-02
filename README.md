@@ -57,7 +57,8 @@ The repository also includes several major assignments that demonstrate comprehe
 ## Getting Started
 
 1. Clone this repository
-   ```   git clone https://github.com/itxsamad1/Java-Android-Dev-Lectures.git
+   ```
+   git clone https://github.com/itxsamad1/Java-Android-Dev-Lectures.git
    ```
 
 2. Install required software
