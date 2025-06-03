@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Lec3</string>
+    <string name="smiu">SMIU Registration From</string>
+    <string name="fn">Enter your First Name</string>
+    <string name="ln">Enter your Last Name</string>
+    <string name="ad">Enter your Address</string>
+    <string name="pn">Enter your Phone Number</string>
+    <string name="bt">Apply</string>
+</resources>
