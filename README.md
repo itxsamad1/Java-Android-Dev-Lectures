@@ -1,21 +1,25 @@
 # Java Android Development Lectures
 
 <div align="center">
-  <img src="images/sam-profile-pic.jpg" alt="Abdul Samad" width="120" />
+  <img src="images/sam-profile-pic.jpg" alt="Abdul Samad" width="150" />
   <h3>Abdul Samad</h3>
   <p><strong>Software Developer</strong></p>
   
   <img src="https://komarev.com/ghpvc/?username=itxsamad1&repo=Java-Android-Dev-Lectures&color=00D9FF&style=for-the-badge&label=Repository+Views" alt="Repository Views"/>
 </div>
 
+<div align="center">
+
 ```ascii
-╔═══════════════════════════════════════════════════════════════════════╗
-║                    Mobile Application Development                     ║
-║                      Spring 2025 | 6th Semester SMIU                  ║
-║                         Instructor: Sir Abid                          ║
-║                    Status: ALL LECTURES COMPLETED ✅                  ║
-╚═══════════════════════════════════════════════════════════════════════╝
+╔════════════════════════════════════════════════════════════════╗
+║                Mobile Application Development                  ║
+║                 Spring 2025 | 6th Semester SMIU                ║
+║                      Instructor: Sir Abid                      ║
+║                 Status: ALL LECTURES COMPLETED ✅             ║
+╚════════════════════════════════════════════════════════════════╝
 ```
+
+</div>
 
 <div align="center">
 
@@ -57,10 +61,51 @@ Lecture#X/
 
 ### 🏆 Major Project Implementations
 
-| Assignment | Core Features | Tech Stack | Location |
-|------------|---------------|------------|----------|
-| **Assignment #1** | Multi-screen navigation, authentication, interactive UI | Java, XML, Android SDK | `Lecture#4/` |
-| **Final Projects** | Complete mobile applications with backend integration | Full Stack Android | Multiple lectures |
+<div align="center">
+
+#### **📱 Course Assignments**
+
+<table>
+<tr>
+<td align="center">
+<h4>🚀 Assignment #1</h4>
+<p><strong>Multi-Screen Android App</strong></p>
+<p>Authentication • Navigation • Interactive UI</p>
+<p><code>Java • XML • Android SDK</code></p>
+<a href="https://github.com/itxsamad1/MAD-Assignment1-App-Java">
+<img src="https://img.shields.io/badge/View%20Repository-00D9FF?style=for-the-badge&logo=github&logoColor=white" alt="Assignment 1 Repo"/>
+</a>
+<br><small>Also available in: <code>Lecture#4/Assignment#1/</code></small>
+</td>
+<td align="center">
+<h4>🔥 Assignment #2</h4>
+<p><strong>Advanced Android Features</strong></p>
+<p>API Integration • Database • Advanced UI</p>
+<p><code>Java • REST API • PostgreSQL</code></p>
+<a href="https://github.com/itxsamad1/MAD-Assignment2-App-Java">
+<img src="https://img.shields.io/badge/View%20Repository-00D9FF?style=for-the-badge&logo=github&logoColor=white" alt="Assignment 2 Repo"/>
+</a>
+<br><small>Also available in: <code>Lecture#10/Assignment#2/</code></small>
+</td>
+</tr>
+</table>
+
+#### **🎓 Final Semester Project**
+
+<div align="center">
+<h3>🏥 MediConnect App</h3>
+<p><strong>Healthcare Mobile Application Platform</strong></p>
+<p>Complete medical consultation and management system</p>
+<p><code>React Native • Node.js • Express.js • PostgreSQL</code></p>
+
+<a href="https://github.com/itxsamad1/MediConnect-App">
+<img src="https://img.shields.io/badge/🏥%20MediConnect%20Repository-FF6B6B?style=for-the-badge&logo=github&logoColor=white" alt="MediConnect Repo"/>
+</a>
+
+<p><strong>✅ Professor Approved & Course Completed</strong></p>
+</div>
+
+</div>
 
 ## 🎯 Complete Course Roadmap
 
@@ -81,9 +126,9 @@ Lecture#X/
 | **07** | 3rd May, 2025 | Dynamic Fragments | ✅ | Advanced fragment management |
 | **08** | 10th May, 2025 | Navigation Components | ✅ | Modern navigation patterns |
 | **09** | 17th May, 2025 | Backend & Database Integration | ✅ | Node.js, Express.js, PostgreSQL |
-| **10** | 24th May, 2025 | API Integration & HTTP Requests | ✅ | RESTful API consumption |
+| **10** | 24th May, 2025 | API Integration & HTTP Requests | ✅ | RESTful API consumption + **Assignment #2** |
 
-**Achievement Status: 10/10 Lectures Completed Successfully**
+**Achievement Status: 10/10 Lectures Completed Successfully + Final Semester Project Approved ✅**
 
 ## ⚙️ Development Environment Setup
 
@@ -230,6 +275,30 @@ git commit -m "feat: detailed description of changes"
   
 ![GitHub Stats](https://github-readme-stats.vercel.app/api/pin/?username=itxsamad1&repo=Java-Android-Dev-Lectures&theme=radical&bg_color=0D1117&title_color=00D9FF&icon_color=00D9FF&text_color=C9D1D9&border_color=00D9FF)
 
+#### **🗂️ Related Project Repositories**
+
+<table>
+<tr>
+<td align="center">
+<a href="https://github.com/itxsamad1/MAD-Assignment1-App-Java">
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=itxsamad1&repo=MAD-Assignment1-App-Java&theme=radical&bg_color=0D1117&title_color=00D9FF&icon_color=00D9FF&text_color=C9D1D9&border_color=00D9FF" alt="Assignment 1"/>
+</a>
+</td>
+<td align="center">
+<a href="https://github.com/itxsamad1/MAD-Assignment2-App-Java">
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=itxsamad1&repo=MAD-Assignment2-App-Java&theme=radical&bg_color=0D1117&title_color=00D9FF&icon_color=00D9FF&text_color=C9D1D9&border_color=00D9FF" alt="Assignment 2"/>
+</a>
+</td>
+</tr>
+<tr>
+<td align="center" colspan="2">
+<a href="https://github.com/itxsamad1/MediConnect-App">
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=itxsamad1&repo=MediConnect-App&theme=radical&bg_color=0D1117&title_color=00D9FF&icon_color=00D9FF&text_color=C9D1D9&border_color=00D9FF" alt="MediConnect"/>
+</a>
+</td>
+</tr>
+</table>
+
 </div>
 
 ---
@@ -250,5 +319,5 @@ git commit -m "feat: detailed description of changes"
 ---
 
 <div align="center">
-  <b>Made with ❤️ by <a href="https://github.com/itxsamad1">Abdul Samad</a> | Spring 2025 | SMIU </b>
+  <b>Made with ❤️ by <a href="https://github.com/itxsamad1">Abdul Samad</a> | Spring 2025 | SMIU</b>
 </div>
