@@ -37,7 +37,7 @@ Comprehensive documentation of my Mobile Application Development journey at SMIU
 </td>
 <td align="center">
 <img src="images/android-developers.png" alt="Android Developers" width="200" style="border-radius: 15px;" />
-<br><b> Android Developer Community</b>
+<br><b> Android Developers Community</b>
 </td>
 </tr>
 </table>
