@@ -10,7 +10,7 @@
 
 ```ascii
                     ╔════════════════════════════════════════════════════════════════╗
-                    ║                Mobile Application Development                  ║
+                    ║                 Mobile Application Development                 ║
                     ║                 Spring 2025 | 6th Semester SMIU                ║
                     ║                      Instructor: Sir Abid                      ║
                     ║                 Status: ALL LECTURES COMPLETED ✅              ║
@@ -33,11 +33,11 @@ Comprehensive documentation of my Mobile Application Development journey at SMIU
 <tr>
 <td align="center">
 <img src="images/android-studio-icon.png" alt="Android Studio" width="200" style="border-radius: 15px;" />
-<br><b>🛠️ Android Studio IDE</b>
+<br><b> Android Studio IDE</b>
 </td>
 <td align="center">
 <img src="images/android-developers.png" alt="Android Developers" width="200" style="border-radius: 15px;" />
-<br><b>🤖 Android Development Platform</b>
+<br><b> Android Developer Community</b>
 </td>
 </tr>
 </table>
@@ -59,6 +59,9 @@ Comprehensive documentation of my Mobile Application Development journey at SMIU
 ![React Native](https://img.shields.io/badge/React%20Native-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
 
 </div>
 
