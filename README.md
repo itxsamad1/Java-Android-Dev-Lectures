@@ -8,18 +8,14 @@
   <img src="https://komarev.com/ghpvc/?username=itxsamad1&repo=Java-Android-Dev-Lectures&color=00D9FF&style=for-the-badge&label=Repository+Views" alt="Repository Views"/>
 </div>
 
-<div align="center">
-
 ```ascii
-╔════════════════════════════════════════════════════════════════╗
-║                Mobile Application Development                  ║
-║                 Spring 2025 | 6th Semester SMIU                ║
-║                      Instructor: Sir Abid                      ║
-║                 Status: ALL LECTURES COMPLETED ✅             ║
-╚════════════════════════════════════════════════════════════════╝
+                    ╔════════════════════════════════════════════════════════════════╗
+                    ║                Mobile Application Development                  ║
+                    ║                 Spring 2025 | 6th Semester SMIU                ║
+                    ║                      Instructor: Sir Abid                      ║
+                    ║                 Status: ALL LECTURES COMPLETED ✅              ║
+                    ╚════════════════════════════════════════════════════════════════╝
 ```
-
-</div>
 
 <div align="center">
 
@@ -33,6 +29,19 @@ Comprehensive documentation of my Mobile Application Development journey at SMIU
 
 <div align="center">
 
+<table>
+<tr>
+<td align="center">
+<img src="images/android-studio-icon.png" alt="Android Studio" width="200" style="border-radius: 15px;" />
+<br><b>🛠️ Android Studio IDE</b>
+</td>
+<td align="center">
+<img src="images/android-developers.png" alt="Android Developers" width="200" style="border-radius: 15px;" />
+<br><b>🤖 Android Development Platform</b>
+</td>
+</tr>
+</table>
+
 ### **Mobile Development Stack**
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
@@ -45,6 +54,11 @@ Comprehensive documentation of my Mobile Application Development journey at SMIU
 ![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
 ![REST API](https://img.shields.io/badge/REST-02569B?style=for-the-badge&logo=rest&logoColor=white)
+
+### **Final Project Stack**
+![React Native](https://img.shields.io/badge/React%20Native-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 
 </div>
 
@@ -99,7 +113,7 @@ Lecture#X/
 <p><code>React Native • Node.js • Express.js • PostgreSQL</code></p>
 
 <a href="https://github.com/itxsamad1/MediConnect-App">
-<img src="https://img.shields.io/badge/🏥%20MediConnect%20Repository-00D9FF?style=for-the-badge&logo=github&logoColor=white" alt="MediConnect Repo"/>
+<img src="https://img.shields.io/badge/🏥%20MediConnect%20Repository-FF6B6B?style=for-the-badge&logo=github&logoColor=white" alt="MediConnect Repo"/>
 </a>
 
 <p><strong>✅ Professor Approved & Course Completed</strong></p>
@@ -111,7 +125,13 @@ Lecture#X/
 
 <div align="center">
 
-![Progress](https://progress-bar.dev/100/?title=Course%20Progress&width=400&color=00D9FF)
+**📊 Course Completion Status: 100% ✅**
+
+```
+████████████████████████████████████████████████████████████████████████████████ 100%
+```
+
+**10/10 Lectures • 2/2 Assignments • 1/1 Final Project • Professor Approved ✅**
 
 </div>
 
