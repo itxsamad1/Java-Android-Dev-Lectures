@@ -11,9 +11,9 @@
 ```ascii
 ╔═══════════════════════════════════════════════════════════════════════╗
 ║                    Mobile Application Development                     ║
-║                      Spring 2025 | 6th Semester SMIU                ║
-║                         Instructor: Sir Abid                         ║
-║                    Status: ALL LECTURES COMPLETED ✅                 ║
+║                      Spring 2025 | 6th Semester SMIU                  ║
+║                         Instructor: Sir Abid                          ║
+║                    Status: ALL LECTURES COMPLETED ✅                  ║
 ╚═══════════════════════════════════════════════════════════════════════╝
 ```
 
@@ -250,5 +250,5 @@ git commit -m "feat: detailed description of changes"
 ---
 
 <div align="center">
-  <sub>Made with ❤️ by <a href="https://github.com/itxsamad1">Abdul Samad</a> | Spring 2025 | SMIU</sub>
+  <b>Made with ❤️ by <a href="https://github.com/itxsamad1">Abdul Samad</a> | Spring 2025 | SMIU </b>
 </div>
