@@ -99,7 +99,7 @@ Lecture#X/
 <p><code>React Native • Node.js • Express.js • PostgreSQL</code></p>
 
 <a href="https://github.com/itxsamad1/MediConnect-App">
-<img src="https://img.shields.io/badge/🏥%20MediConnect%20Repository-FF6B6B?style=for-the-badge&logo=github&logoColor=white" alt="MediConnect Repo"/>
+<img src="https://img.shields.io/badge/🏥%20MediConnect%20Repository-00D9FF?style=for-the-badge&logo=github&logoColor=white" alt="MediConnect Repo"/>
 </a>
 
 <p><strong>✅ Professor Approved & Course Completed</strong></p>
